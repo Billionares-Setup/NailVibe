@@ -43,3 +43,14 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP); //add this to every file where you use the useGSAP hook
+
+## Iconify Setup - an icon library
+
+visit - https://icon-sets.iconify.design/
+
+To add an icon to component:-
+
+1. import { Icon } from "@iconify/react";
+2. <Icon icon="mdi-light:home" />
+
+use tailwind css to change the size(h-5 w-5 or size-5) and color (text-green-500) of icon
