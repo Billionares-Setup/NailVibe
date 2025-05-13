@@ -8,7 +8,11 @@ import { useState, useRef } from "react";
 import store1 from "../assets/store/store1.jpg";
 import store2 from "../assets/store/store2.jpg";
 import store3 from "../assets/store/store3.jpg";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const storeImages = [store1, store2, store3];
 
@@ -23,6 +27,31 @@ const Hero = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % storeImages.length);
     }, 5000); // 5 seconds
   }
+
+  //GSAP animation
+  const main = useRef(null);
+  const address = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        address.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          delay: 1,
+          duration: 3,
+          scrollTrigger: {
+            trigger: address.current,
+            start: "top 80%",
+            end: "top 30%",
+            toggleActions: "play reverse play reverse", // syncs with scroll
+            // markers: true,
+          },
+        }
+      );
+    },
+    { scope: main }
+  );
 
   return (
     <div>
@@ -91,7 +120,7 @@ const Hero = () => {
           >
             Your Beauty, Our Passion
           </p>
-          <div className="my-6 flex justify-center z-10">
+          <div ref={main} className="my-6 flex justify-center z-10">
             <div className="relative group transition-transform duration-500 ease-out hover:scale-[102%]">
               <img
                 src={storeImages[currentIndex]}
@@ -100,7 +129,10 @@ const Hero = () => {
               />
 
               {/* Info Card - will stay attached & scale with image on hover */}
-              <div className="absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs">
+              <div
+                ref={address}
+                className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
+              >
                 <div className="flex items-center gap-2">
                   <p
                     className="text-violet-900 font-bold text-3xl leading-none"
