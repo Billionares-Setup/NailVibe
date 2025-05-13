@@ -28,9 +28,10 @@ const Hero = () => {
     }, 5000); // 5 seconds
   }
 
-  //GSAP animation
+  //GSAP animation for Address box
   const main = useRef(null);
   const address = useRef(null);
+
   useGSAP(
     () => {
       gsap.fromTo(
@@ -52,6 +53,53 @@ const Hero = () => {
     },
     { scope: main }
   );
+
+  //GSAP animation for left-hand
+  const handLeft = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      handLeft.current,
+      { x: "-100vw", y: "-100vh", opacity: 0 },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        delay: 0.5,
+        duration: 3,
+        ease: "power2.out",
+      }
+    );
+  });
+
+  //GSAP animation for right-hand
+  const handRight = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      handRight.current,
+      { x: "130vw", y: "130vh", opacity: 0 },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        delay: 1,
+        duration: 3,
+        ease: "power2.out",
+      }
+    );
+  });
+  //GSAP animation for right-hand
+  const logoRender = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      logoRender.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+      }
+    );
+  });
 
   return (
     <div>
@@ -79,6 +127,7 @@ const Hero = () => {
         <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
           {/* Top-left image */}
           <img
+            ref={handLeft}
             src={nails}
             alt="Nails1"
             className="absolute top-0 left-0 size-[20em]"
@@ -87,6 +136,7 @@ const Hero = () => {
           {/* Center image */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img
+              ref={logoRender}
               src={royalLogo}
               alt="Royal Nails & Spa Logo"
               className="size-[20em] z-10"
@@ -95,6 +145,7 @@ const Hero = () => {
 
           {/* Bottom-right image */}
           <img
+            ref={handRight}
             src={nails2}
             alt="Nails2"
             className="absolute bottom-0 right-0 size-[20em]  overflow-clip"
