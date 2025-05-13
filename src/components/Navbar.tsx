@@ -1,11 +1,16 @@
 import { Icon } from "@iconify/react";
-
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
 import royalLogo from "../assets/RoyalNailsLogo.jpg";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -19,8 +24,27 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
+  //GSAP for nav
+  const navAnimation = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      navAnimation.current,
+      { y: "-100%", opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "bounce.out", // bounce effect
+      }
+    );
+  });
+
   return (
-    <Disclosure as="nav" className="bg-gray-100/50 z-50 sticky top-0 shadow-lg">
+    <Disclosure
+      ref={navAnimation}
+      as="nav"
+      className="bg-gray-100/50 z-50 sticky top-0 shadow-lg"
+    >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
