@@ -151,7 +151,13 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-900 text-white font-semibold hover:bg-violet-800 transition"
                 >
-                  🧭 Get Directions
+                  <div className="flex items-center justify-center gap-2">
+                    <Icon
+                      icon="ic:outline-directions"
+                      className="mt-0.5  size-5"
+                    />
+                    <p>Get Directions</p>
+                  </div>
                 </a>
               </div>
             </div>
