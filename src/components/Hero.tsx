@@ -39,8 +39,8 @@ const Hero = () => {
         { opacity: 0 },
         {
           opacity: 1,
-          delay: 1,
-          duration: 3,
+          delay: 0.5,
+          duration: 1.5,
           scrollTrigger: {
             trigger: address.current,
             start: "top 80%",
