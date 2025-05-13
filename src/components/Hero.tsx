@@ -101,6 +101,23 @@ const Hero = () => {
     );
   });
 
+  //Image Zoom animation
+  const imageRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 1 },
+        {
+          scale: 1.08,
+          opacity: 1,
+          duration: 5,
+          ease: "power2.in",
+        }
+      );
+    },
+    { dependencies: [currentIndex] } // ✅ Triggers when currentIndex changes
+  );
   return (
     <div>
       <Navbar />
@@ -172,11 +189,12 @@ const Hero = () => {
             Your Beauty, Our Passion
           </p>
           <div ref={main} className="my-6 flex justify-center z-10">
-            <div className="relative group transition-transform duration-500 ease-out hover:scale-[102%]">
+            <div className="relative h-[75vh] w-[80vw]  bg-white rounded-lg shadow-lg border border-violet-900 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
               <img
+                ref={imageRef}
                 src={storeImages[currentIndex]}
                 alt={`store image ${currentIndex}`}
-                className="h-[75vh] w-[80vw] object-cover bg-white rounded-lg shadow-lg border border-violet-900"
+                className="object-cover h-full w-full rounded-lg"
               />
 
               {/* Info Card - will stay attached & scale with image on hover */}
