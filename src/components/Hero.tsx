@@ -142,6 +142,13 @@ const Hero = () => {
         {/* Pinkish Spots End */}
 
         <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
+          {/* <div className="absolute top-4 flex flex-col items-center justify-center right-8">
+            <Icon icon="skill-icons:instagram" className=" size-12" />{" "}
+            <Icon
+              icon="fe:facebook"
+              className="mt-2  size-[3.5em] text-blue-500"
+            />
+          </div> */}
           {/* Top-left image */}
           <img
             ref={handLeft}
@@ -170,7 +177,7 @@ const Hero = () => {
         </div>
         <div className=" flex flex-col items-center justify-center mt-12">
           <h1
-            className="text-4xl font-semibold text-gray-800 z-20 text-indigo-800"
+            className="text-4xl font-semibold text-gray-800 z-20 text-indigo-800 text-center mx-2 sm:mx-auto"
             style={{
               fontFamily: '"Ephesis", cursive',
               fontSize: "3rem",
