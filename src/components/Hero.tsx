@@ -11,6 +11,7 @@ import store3 from "../assets/store/store3.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Services from "../components/Services";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
@@ -272,6 +273,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <Services />
     </div>
   );
 };
