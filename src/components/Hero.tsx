@@ -12,6 +12,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const storeImages = [store1, store2, store3];
@@ -272,6 +273,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+    
     </div>
   );
 };
