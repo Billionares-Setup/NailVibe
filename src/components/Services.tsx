@@ -4,37 +4,41 @@ import { servicePrice } from "../assets/service/service-price";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { Icon } from "@iconify/react";
 
 gsap.registerPlugin(ScrollTrigger);
 const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-   useEffect(() => {
-  if (!sectionRef.current) return;
+  useEffect(() => {
+    if (!sectionRef.current) return;
 
-  const container = sectionRef.current as HTMLDivElement;
+    const container = sectionRef.current as HTMLDivElement;
 
-  const ctx = gsap.context(() => {
-    gsap.fromTo(
-      container,
-      { opacity: 0, y: 80 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 2.5, // slower entrance
-        ease: "power3.out", // smooth easing
-        scrollTrigger: {
-          trigger: container,
-          start: "top 85%",
-          toggleActions: "play none none reverse", // allow reverse on scroll up
-        },
-      }
-    );
-  }, sectionRef);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        container,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5, // slower entrance
+          ease: "power3.out", // smooth easing
+          scrollTrigger: {
+            trigger: container,
+            start: "top 85%",
+            toggleActions: "play none none none", // allow reverse on scroll up
+          },
+        }
+      );
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
   return (
-    <div ref = {sectionRef}className="relative isolate px-6 py-10 sm:py-15 lg:px-8">
+    <div
+      ref={sectionRef}
+      className="relative isolate px-6 py-16 sm:py-16 lg:px-8"
+    >
       {/* Background Shape */}
       <div
         className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
@@ -51,21 +55,25 @@ const Services = () => {
 
       {/* Title & Description */}
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-semibold text-indigo-600">Pricing</h2>
-        <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
-          Choose the right plan for you
+        <div className="flex gap-3 items-center justify-center">
+          <Icon
+            icon="arcticons:royal-tsd"
+            className="size-20 text-indigo-800 stroke-[1.5px]"
+          />
+          <h2 className="text-4xl md:text-5xl font-semibold text-indigo-800">
+            The Royal Menu
+          </h2>
+        </div>
+        <p className="text-2xl font-medium text-indigo-500 z-20">
+          You deserve to be treated like Royalty
         </p>
       </div>
-      <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
-        Choose from affordable service options tailored to enhance your nail
-        care experience.
-      </p>
 
       {/* Carousel */}
-      <div className="flex justify-center mt-4 sm:mt-6"> 
+      <div className="flex justify-center mt-4 sm:mt-6">
         <Carousel
           pauseOnHover
-          className="w-full max-w-4xl px-4 sm:px-6 md:px-8 h-auto" 
+          className="w-full max-w-4xl px-4 sm:px-6 md:px-8 h-auto"
           slide={true}
           indicators={false}
         >
@@ -79,8 +87,6 @@ const Services = () => {
           ))}
         </Carousel>
       </div>
-
-
     </div>
   );
 };

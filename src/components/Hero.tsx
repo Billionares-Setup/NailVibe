@@ -3,7 +3,9 @@ import { Icon } from "@iconify/react";
 import royalLogo from "../assets/RoyalNailsLogo.jpg";
 import nails from "../assets/Nails.png";
 import nails2 from "../assets/Nails2.png";
-import Navbar from "./Navbar";
+// import crown from "../assets/Crown.png";
+import crowntransparent from "../assets/CrownTransparent.png";
+
 import { useState, useRef } from "react";
 import store1 from "../assets/store/store1.jpg";
 import store2 from "../assets/store/store2.jpg";
@@ -11,7 +13,6 @@ import store3 from "../assets/store/store3.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
@@ -97,7 +98,7 @@ const Hero = () => {
       {
         opacity: 1,
         duration: 2,
-        ease: "power2.out",
+        ease: "power3.in",
       }
     );
   });
@@ -121,159 +122,144 @@ const Hero = () => {
   );
   return (
     <div>
-      <Navbar />
-      <div className="relative bg-gradient-to-tr from-gray-100 via-slate-100 to-white  min-h-screen  overflow-hidden">
-        {/* Pinkish Spots Start */}
-        <div
-          className="fixed left-0 top-[2em] w-[30rem] h-[30rem] rounded-full 
-  bg-gradient-to-tr from-rose-300 via-pink-300 to-blue-300 
-  opacity-30 blur-3xl overscroll-none "
-        ></div>
-        <div
-          className="fixed left-1/2 top-[20em] w-[30rem] h-[30rem] rounded-full 
-  bg-gradient-to-tr from-red-300 via-pink-300 to-blue-300 
-  opacity-30 blur-3xl  overscroll-none "
-        ></div>
+      <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
+        {/* <div className="absolute top-4 flex flex-col items-center justify-center right-8">
+  <Icon icon="skill-icons:instagram" className=" size-12" />{" "}
+  <Icon
+    icon="fe:facebook"
+    className="mt-2  size-[3.5em] text-blue-500"
+  />
+</div> */}
+        {/* Top-left image */}
+        <img
+          ref={handLeft}
+          src={nails}
+          alt="Nails1"
+          className="absolute top-0 left-0 size-[20em]"
+        />
 
-        <div
-          className="fixed right-0 top-0 w-[20rem] h-[20rem] rounded-full 
-  bg-gradient-to-tr from-purple-300 via-pink-300 to-blue-300 
-  opacity-30 blur-3xl  overscroll-none "
-        ></div>
-        {/* Pinkish Spots End */}
-
-        <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
-          {/* <div className="absolute top-4 flex flex-col items-center justify-center right-8">
-            <Icon icon="skill-icons:instagram" className=" size-12" />{" "}
-            <Icon
-              icon="fe:facebook"
-              className="mt-2  size-[3.5em] text-blue-500"
-            />
-          </div> */}
-          {/* Top-left image */}
-          <img
-            ref={handLeft}
-            src={nails}
-            alt="Nails1"
-            className="absolute top-0 left-0 size-[20em]"
-          />
-
-          {/* Center image */}
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Center image */}
+        <div className="absolute inset-0 flex  flex-col items-center justify-center">
+          <div ref={logoRender} className="relative">
             <img
-              ref={logoRender}
+              src={crowntransparent}
+              alt="crown"
+              className="absolute bottom-[250px] left-8 z-10 h-[12em] w-[16em]"
+            />
+            <img
               src={royalLogo}
               alt="Royal Nails & Spa Logo"
-              className="size-[20em] z-10"
+              className="size-[20em] border-2 border-purple-400  rounded-full z-20 relative"
             />
           </div>
-
-          {/* Bottom-right image */}
-          <img
-            ref={handRight}
-            src={nails2}
-            alt="Nails2"
-            className="absolute bottom-0 right-0 size-[20em]  overflow-clip"
-          />
         </div>
-        <div className=" flex flex-col items-center justify-center mt-12">
-          <h1
-            className="text-4xl font-semibold text-gray-800 z-20 text-indigo-800 text-center mx-2 sm:mx-auto"
+
+        {/* Bottom-right image */}
+        <img
+          ref={handRight}
+          src={nails2}
+          alt="Nails2"
+          className="absolute bottom-0 right-0 size-[20em]  overflow-clip"
+        />
+      </div>
+      <div className=" flex flex-col items-center justify-center mt-12">
+        <div className="flex items-start justify-end">
+          <span className="text-4xl sm:text-5xl  font-semibold text-indigo-800 text-center mx-2 ">
+            Welcome to{" "}
+          </span>
+          <span
+            className="text-4xl  md:text-6xl mr-2  font-semibold text-indigo-800 text-center  "
             style={{
               fontFamily: '"Ephesis", cursive',
-              fontSize: "3rem",
             }}
           >
-            Welcome to Royal Nails & Spa
-          </h1>
-          <br />
-          <p
-            className="text-lg text-gray-600 text-indigo-800 z-20"
-            style={{
-              fontFamily: '"Open Sans", sans-serif',
-              fontSize: "1.5rem",
-            }}
-          >
-            Your Beauty, Our Passion
-          </p>
-          <div ref={main} className="my-6 flex justify-center z-10">
-            <div className="relative h-[75vh] w-[80vw]  bg-white rounded-lg shadow-lg border border-violet-900 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
-              <img
-                ref={imageRef}
-                src={storeImages[currentIndex]}
-                alt={`store image ${currentIndex}`}
-                className="object-cover h-full w-full rounded-lg"
-              />
+            Royal{" "}
+          </span>
+          <span className="text-4xl sm:text-5xl font-semibold text-indigo-800 text-center mx-2 ">
+            {" "}
+            Nails & Spa
+          </span>
+        </div>
 
-              {/* Info Card - will stay attached & scale with image on hover */}
-              <div
-                ref={address}
-                className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
-              >
-                <div className="flex items-center gap-2">
-                  <p
-                    className="text-violet-900 font-bold text-3xl leading-none"
-                    style={{ fontFamily: '"Ephesis", cursive' }}
-                  >
-                    Royal
-                  </p>
-                  <span className="text-violet-900 font-semibold text-base mt-1">
-                    Nails & Spa
-                  </span>
-                </div>
+        <p className="text-2xl font-medium mt-1 text-indigo-500 z-20">
+          Your Beauty, Our Passion
+        </p>
+        <div ref={main} className="mt-6 flex justify-center z-10">
+          <div className="relative h-[75vh] w-[80vw]  bg-white rounded-lg shadow-lg border border-violet-900 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
+            <img
+              ref={imageRef}
+              src={storeImages[currentIndex]}
+              alt={`store image ${currentIndex}`}
+              className="object-cover h-full w-full rounded-lg"
+            />
 
-                <div className="flex items-start gap-2">
-                  <Icon
-                    icon="mdi:location"
-                    className="mt-0.5 text-red-600 size-5"
-                  />
-                  <p>161 Colborne St W, Brantford, ON N3T 1L2</p>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <Icon
-                    icon="material-symbols:call"
-                    className="mt-0.5 text-red-600 size-5"
-                  />
-                  <p>(519) 304-9044</p>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <Icon
-                    icon="mdi:clock-outline"
-                    className="mt-0.5 text-red-600 size-5"
-                  />
-                  <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Icon
-                    icon="ci:house-close"
-                    className="mt-0.5 text-red-600 size-5"
-                  />
-                  <p>Closed on Sundays</p>
-                </div>
-
-                <a
-                  href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-900 text-white font-semibold hover:bg-violet-800 transition"
+            {/* Info Card - will stay attached & scale with image on hover */}
+            <div
+              ref={address}
+              className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
+            >
+              <div className="flex items-center gap-2">
+                <p
+                  className="text-violet-900 font-bold text-3xl leading-none"
+                  style={{ fontFamily: '"Ephesis", cursive' }}
                 >
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon
-                      icon="ic:outline-directions"
-                      className="mt-0.5  size-5"
-                    />
-                    <p>Get Directions</p>
-                  </div>
-                </a>
+                  Royal
+                </p>
+                <span className="text-violet-900 font-semibold text-base mt-1">
+                  Nails & Spa
+                </span>
               </div>
+
+              <div className="flex items-start gap-2">
+                <Icon
+                  icon="mdi:location"
+                  className="mt-0.5 text-red-600 size-5"
+                />
+                <p>161 Colborne St W, Brantford, ON N3T 1L2</p>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <Icon
+                  icon="material-symbols:call"
+                  className="mt-0.5 text-red-600 size-5"
+                />
+                <p>(519) 304-9044</p>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <Icon
+                  icon="mdi:clock-outline"
+                  className="mt-0.5 text-red-600 size-5"
+                />
+                <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Icon
+                  icon="ci:house-close"
+                  className="mt-0.5 text-red-600 size-5"
+                />
+                <p>Closed on Sundays</p>
+              </div>
+
+              <a
+                href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-900 text-white font-semibold hover:bg-violet-800 transition"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icon
+                    icon="ic:outline-directions"
+                    className="mt-0.5  size-5"
+                  />
+                  <p>Get Directions</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    
     </div>
   );
 };
