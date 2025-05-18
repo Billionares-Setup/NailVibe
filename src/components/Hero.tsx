@@ -1,12 +1,12 @@
 import { Icon } from "@iconify/react";
-
+import { useEffect, useRef } from "react";
 import royalLogo from "../assets/RoyalNailsLogo.jpg";
 import nails from "../assets/Nails.png";
 import nails2 from "../assets/Nails2.png";
 // import crown from "../assets/Crown.png";
 import crowntransparent from "../assets/CrownTransparent.png";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import store1 from "../assets/store/store1.jpg";
 import store2 from "../assets/store/store2.jpg";
 import store3 from "../assets/store/store3.jpg";
@@ -120,6 +120,34 @@ const Hero = () => {
     },
     { dependencies: [currentIndex] } // ✅ Triggers when currentIndex changes
   );
+
+  //Scroll Animation
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const container = sectionRef.current as HTMLDivElement;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        container,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5, // slower entrance
+          ease: "power3.out", // smooth easing
+          scrollTrigger: {
+            trigger: container,
+            start: "top 85%",
+            toggleActions: "play none none none", // allow reverse on scroll up
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
   return (
     <div>
       <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
@@ -162,7 +190,10 @@ const Hero = () => {
           className="absolute bottom-0 right-0 size-[20em]  overflow-clip"
         />
       </div>
-      <div className=" flex flex-col items-center justify-center mt-12">
+      <div
+        ref={sectionRef}
+        className=" flex flex-col items-center justify-center mt-12"
+      >
         <div className="flex items-start justify-end">
           <span className="text-4xl sm:text-5xl  font-semibold text-indigo-800 text-center mx-2 ">
             Welcome to{" "}
