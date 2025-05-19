@@ -213,7 +213,7 @@ const Hero = () => {
         <p className="text-2xl font-medium mt-1 text-indigo-500 z-20">
           Your Beauty, Our Passion
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 items-center mt-6  mx-4 md:mx-12">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 md:gap-4 items-center mt-6  mx-4 md:mx-12">
           <div className="lg:col-span-7">
             <div ref={main} className=" flex justify-center z-10 ">
               <div className="relative h-[75vh] w-[80vw]  bg-white rounded-xl shadow-lg border border-gray-300 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
