@@ -196,21 +196,18 @@ const Hero = () => {
         className=" flex flex-col items-center justify-center mt-12"
       >
         <div className="flex items-start justify-end">
-          <span className="text-4xl sm:text-5xl  font-semibold text-indigo-800 text-center mx-2 ">
+          <p className="text-4xl sm:text-5xl  font-semibold text-indigo-800 text-center mx-2 ">
             Welcome to{" "}
-          </span>
-          <span
-            className="text-4xl  md:text-6xl mr-2  font-semibold text-indigo-800 text-center  "
-            style={{
-              fontFamily: '"Ephesis", cursive',
-            }}
-          >
-            Royal{" "}
-          </span>
-          <span className="text-4xl sm:text-5xl font-semibold text-indigo-800 text-center mx-2 ">
-            {" "}
+            <span
+              className="text-4xl  md:text-6xl mr-2  font-semibold text-indigo-800 text-center  "
+              style={{
+                fontFamily: '"Ephesis", cursive',
+              }}
+            >
+              Royal{" "}
+            </span>{" "}
             Nails & Spa
-          </span>
+          </p>
         </div>
 
         <p className="text-2xl font-medium mt-1 text-indigo-500 z-20">
