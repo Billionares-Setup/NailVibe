@@ -144,8 +144,8 @@ const TipsPage = () => {
             onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 border ${
               activeCategory === category
-                ? "bg-violet-600 text-white shadow-md"
-                : "bg-white text-violet-600 border-violet-600 hover:bg-violet-50"
+                ? "bg-violet-500 text-white shadow-md"
+                : "bg-white text-violet-500 border-violet-600 hover:bg-violet-50"
             }`}
           >
             {category
