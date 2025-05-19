@@ -13,6 +13,7 @@ import store3 from "../assets/store/store3.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MapSection from "./MapSection";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
@@ -47,7 +48,7 @@ const Hero = () => {
             trigger: address.current,
             start: "top 80%",
             end: "top 30%",
-            toggleActions: "play reverse play reverse", // syncs with scroll
+            toggleActions: "play none none none", // syncs with scroll
             // markers: true,
           },
         }
@@ -215,79 +216,86 @@ const Hero = () => {
         <p className="text-2xl font-medium mt-1 text-indigo-500 z-20">
           Your Beauty, Our Passion
         </p>
-        <div ref={main} className="mt-6 flex justify-center z-10">
-          <div className="relative h-[75vh] w-[80vw]  bg-white rounded-lg shadow-lg border border-violet-900 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
-            <img
-              ref={imageRef}
-              src={storeImages[currentIndex]}
-              alt={`store image ${currentIndex}`}
-              className="object-cover h-full w-full rounded-lg"
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 items-center mt-6  mx-4 md:mx-12">
+          <div className="lg:col-span-7">
+            <div ref={main} className=" flex justify-center z-10 ">
+              <div className="relative h-[75vh] w-[80vw]  bg-white rounded-xl shadow-lg border border-gray-300 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
+                <img
+                  ref={imageRef}
+                  src={storeImages[currentIndex]}
+                  alt={`store image ${currentIndex}`}
+                  className="object-cover h-full w-full rounded-lg"
+                />
 
-            {/* Info Card - will stay attached & scale with image on hover */}
-            <div
-              ref={address}
-              className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
-            >
-              <div className="flex items-center gap-2">
-                <p
-                  className="text-violet-900 font-bold text-3xl leading-none"
-                  style={{ fontFamily: '"Ephesis", cursive' }}
+                {/* Info Card - will stay attached & scale with image on hover */}
+                <div
+                  ref={address}
+                  className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
                 >
-                  Royal
-                </p>
-                <span className="text-violet-900 font-semibold text-base mt-1">
-                  Nails & Spa
-                </span>
-              </div>
+                  <div className="flex items-center gap-2">
+                    <p
+                      className="text-violet-900 font-bold text-3xl leading-none"
+                      style={{ fontFamily: '"Ephesis", cursive' }}
+                    >
+                      Royal
+                    </p>
+                    <span className="text-violet-900 font-semibold text-base mt-1">
+                      Nails & Spa
+                    </span>
+                  </div>
 
-              <div className="flex items-start gap-2">
-                <Icon
-                  icon="mdi:location"
-                  className="mt-0.5 text-red-600 size-5"
-                />
-                <p>161 Colborne St W, Brantford, ON N3T 1L2</p>
-              </div>
+                  <div className="flex items-start gap-2">
+                    <Icon
+                      icon="mdi:location"
+                      className="mt-0.5 text-red-600 size-5"
+                    />
+                    <p>161 Colborne St W, Brantford, ON N3T 1L2</p>
+                  </div>
 
-              <div className="flex items-start gap-2">
-                <Icon
-                  icon="material-symbols:call"
-                  className="mt-0.5 text-red-600 size-5"
-                />
-                <p>(519) 304-9044</p>
-              </div>
+                  <div className="flex items-start gap-2">
+                    <Icon
+                      icon="material-symbols:call"
+                      className="mt-0.5 text-red-600 size-5"
+                    />
+                    <p>(519) 304-9044</p>
+                  </div>
 
-              <div className="flex items-start gap-2">
-                <Icon
-                  icon="mdi:clock-outline"
-                  className="mt-0.5 text-red-600 size-5"
-                />
-                <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
-              </div>
+                  <div className="flex items-start gap-2">
+                    <Icon
+                      icon="mdi:clock-outline"
+                      className="mt-0.5 text-red-600 size-5"
+                    />
+                    <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
+                  </div>
 
-              <div className="flex items-center gap-2">
-                <Icon
-                  icon="ci:house-close"
-                  className="mt-0.5 text-red-600 size-5"
-                />
-                <p>Closed on Sundays</p>
-              </div>
+                  <div className="flex items-center gap-2">
+                    <Icon
+                      icon="ci:house-close"
+                      className="mt-0.5 text-red-600 size-5"
+                    />
+                    <p>Closed on Sundays</p>
+                  </div>
 
-              <a
-                href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-900 text-white font-semibold hover:bg-violet-800 transition"
-              >
-                <div className="flex items-center justify-center gap-2">
-                  <Icon
-                    icon="ic:outline-directions"
-                    className="mt-0.5  size-5"
-                  />
-                  <p>Get Directions</p>
+                  <a
+                    href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-600 text-white font-semibold hover:bg-violet-500 transition"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <Icon
+                        icon="material-symbols:map-outline"
+                        className="mt-0.5  size-5"
+                      />
+                      <p className="uppercase ">Get Directions</p>
+                    </div>
+                  </a>
                 </div>
-              </a>
+              </div>
             </div>
+          </div>
+          <div className="lg:col-span-3 w-full">
+            <MapSection />
           </div>
         </div>
       </div>

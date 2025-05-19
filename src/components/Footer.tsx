@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-violet-300 z-50 py-16 px-8 md:px-24 border-t border-violet-800"
+      className="bg-violet-500 z-50 py-16 px-8 md:px-24 border-t border-violet-800"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-left sm:text-left">
         {/* Contact Info */}

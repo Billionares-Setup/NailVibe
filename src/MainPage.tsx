@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Review from "./components/Review";
 import Services from "./components/Services";
+import TipsPage from "./components/TipsPage";
 
 const MainPage = () => {
   return (
@@ -31,6 +32,7 @@ opacity-30 blur-3xl  overscroll-none "
         <Hero />
         <Services />
         <Gallery />
+        <TipsPage />
         <Review />
         <Footer />
       </div>

@@ -11,7 +11,7 @@ interface Description {
 
 const ServiceCard = ({ name, description, notes }: Service) => {
   return (
-    <div className="flex justify-center rounded-xl bg-violet-300 p-6 shadow-lg ">
+    <div className="flex justify-center rounded-xl bg-violet-500 p-6 shadow-lg ">
       <div className="relative w-full max-w-2xl rounded-xl bg-gray-100 h-[30em] p-8 shadow-2xl ring-1 ring-gray-300 sm:p-10 transition-transform duration-300 ease-in-out hover:scale-[103%]">
         <h3 className="text-base font-semibold text-violet-900">
           {name.toUpperCase()}
