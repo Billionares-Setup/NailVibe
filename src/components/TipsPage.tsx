@@ -119,20 +119,20 @@ const TipsPage = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative z-10 max-w-5xl mx-auto p-6 text-gray-800 dark:text-white mb-12"
+      className="relative z-10 max-w-5xl p-6 mx-auto mb-12 text-gray-800 dark:text-white"
     >
       {/* Title & Description */}
-      <div className="mx-auto max-w-4xl text-center mb-8">
-        <div className="flex gap-3 items-center justify-center">
+      <div className="max-w-4xl mx-auto mb-8 text-center">
+        <div className="flex items-center justify-center gap-3">
           <Icon
             icon="arcticons:connected-care"
             className="size-14 text-indigo-800 stroke-[1.5px]"
           />
-          <h2 className="text-4xl md:text-5xl font-semibold text-indigo-800">
+          <h2 className="text-4xl font-semibold text-indigo-800 md:text-5xl">
             Nail Care Tips & Advice
           </h2>
         </div>
-        <p className="text-2xl font-medium text-indigo-500 z-20">
+        <p className="z-20 text-2xl font-medium text-indigo-500">
           Expert recommendations from Royal Nails & Spa
         </p>
       </div>
@@ -156,7 +156,7 @@ const TipsPage = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-2">
         {(nailTips[activeCategory] || []).map((tip, index) => {
           const emojiMatch = tip.match(/^[^\s]+/);
           const emoji = emojiMatch ? emojiMatch[0] : "💅";
@@ -165,7 +165,7 @@ const TipsPage = () => {
           return (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-md transition-transform hover:-translate-y-1"
+              className="p-4 transition-transform bg-white rounded-lg shadow dark:bg-gray-800 hover:shadow-md hover:-translate-y-1"
             >
               <div className="flex items-start gap-3">
                 <div className="text-2xl">{emoji}</div>
@@ -178,15 +178,15 @@ const TipsPage = () => {
         })}
       </div>
 
-      <div className="bg-violet-500  text-white p-6 rounded-lg text-center">
-        <h3 className="text-xl font-semibold mb-2">Professional Advice</h3>
-        <p className="mb-4 max-w-xl mx-auto">
+      <div className="p-6 text-center text-white rounded-lg bg-violet-400">
+        <h3 className="mb-2 text-xl font-semibold">Professional Advice</h3>
+        <p className="max-w-xl mx-auto mb-4">
           While these tips are helpful, nothing beats professional care. Visit
           us at <span className="font-semibold">Royal Nails & Spa</span> for
           personalized nail care recommendations and premium treatments tailored
           to your nail type and lifestyle.
         </p>
-        <button className="bg-white text-violet-600 font-bold px-6 py-2 rounded-full hover:bg-violet-50 transition-all">
+        <button className="px-6 py-2 font-bold transition-all bg-white rounded-full text-violet-600 hover:bg-violet-50">
           Book an Appointment
         </button>
       </div>

@@ -151,8 +151,8 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div className="relative w-screen h-screen  text-center overflow-hidden shadow-lg">
-        {/* <div className="absolute top-4 flex flex-col items-center justify-center right-8">
+      <div className="relative w-screen h-screen overflow-hidden text-center shadow-lg">
+        {/* <div className="absolute flex flex-col items-center justify-center top-4 right-8">
   <Icon icon="skill-icons:instagram" className=" size-12" />{" "}
   <Icon
     icon="fe:facebook"
@@ -168,7 +168,7 @@ const Hero = () => {
         />
 
         {/* Center image */}
-        <div className="absolute inset-0 flex  flex-col items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div ref={logoRender} className="relative">
             <img
               src={crowntransparent}
@@ -193,13 +193,13 @@ const Hero = () => {
       </div>
       <div
         ref={sectionRef}
-        className=" flex flex-col items-center justify-center mt-12"
+        className="flex flex-col items-center justify-center mt-12 "
       >
         <div className="flex items-start justify-end">
-          <p className="text-4xl sm:text-5xl  font-semibold text-indigo-800 text-center mx-2 ">
+          <p className="mx-2 text-4xl font-semibold text-center text-indigo-800 sm:text-5xl ">
             Welcome to{" "}
             <span
-              className="text-4xl  md:text-6xl mr-2  font-semibold text-indigo-800 text-center  "
+              className="mr-2 text-4xl font-semibold text-center text-indigo-800 md:text-6xl "
               style={{
                 fontFamily: '"Ephesis", cursive',
               }}
@@ -210,18 +210,18 @@ const Hero = () => {
           </p>
         </div>
 
-        <p className="text-2xl font-medium mt-1 text-indigo-500 z-20">
+        <p className="z-20 mt-1 text-2xl font-medium text-indigo-500">
           Your Beauty, Our Passion
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 md:gap-4 items-center mt-6  mx-4 md:mx-12">
+        <div className="grid items-center grid-cols-1 gap-6 mx-4 mt-6 lg:grid-cols-10 md:gap-4 md:mx-12">
           <div className="lg:col-span-7">
-            <div ref={main} className=" flex justify-center z-10 ">
+            <div ref={main} className="z-10 flex justify-center ">
               <div className="relative h-[75vh] w-[80vw]  bg-white rounded-xl shadow-lg border border-gray-300 group transition-transform duration-500 ease-out hover:scale-[102%] overflow-hidden">
                 <img
                   ref={imageRef}
                   src={storeImages[currentIndex]}
                   alt={`store image ${currentIndex}`}
-                  className="object-cover h-full w-full rounded-lg"
+                  className="object-cover w-full h-full rounded-lg"
                 />
 
                 {/* Info Card - will stay attached & scale with image on hover */}
@@ -231,12 +231,12 @@ const Hero = () => {
                 >
                   <div className="flex items-center gap-2">
                     <p
-                      className="text-violet-900 font-bold text-3xl leading-none"
+                      className="text-3xl font-bold leading-none text-violet-900"
                       style={{ fontFamily: '"Ephesis", cursive' }}
                     >
                       Royal
                     </p>
-                    <span className="text-violet-900 font-semibold text-base mt-1">
+                    <span className="mt-1 text-base font-semibold text-violet-900">
                       Nails & Spa
                     </span>
                   </div>
@@ -277,7 +277,7 @@ const Hero = () => {
                     href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center mt-4 px-4 py-2 rounded-lg bg-violet-600 text-white font-semibold hover:bg-violet-500 transition"
+                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-violet-600 hover:bg-violet-400"
                   >
                     <div className="flex items-center justify-center gap-2">
                       <Icon
@@ -291,7 +291,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="lg:col-span-3 w-full">
+          <div className="w-full lg:col-span-3">
             <MapSection />
           </div>
         </div>
