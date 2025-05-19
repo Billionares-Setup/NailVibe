@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type TipCategory =
   | "general"
@@ -84,8 +89,38 @@ const TipsPage = () => {
     "policy",
   ];
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const container = sectionRef.current as HTMLDivElement;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        container,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5, // slower entrance
+          ease: "power3.out", // smooth easing
+          scrollTrigger: {
+            trigger: container,
+            start: "top 85%",
+            toggleActions: "play none none none", // allow reverse on scroll up
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="relative z-10 max-w-5xl mx-auto p-6 text-gray-800 dark:text-white mb-12">
+    <div
+      ref={sectionRef}
+      className="relative z-10 max-w-5xl mx-auto p-6 text-gray-800 dark:text-white mb-12"
+    >
       {/* Title & Description */}
       <div className="mx-auto max-w-4xl text-center mb-8">
         <div className="flex gap-3 items-center justify-center">
