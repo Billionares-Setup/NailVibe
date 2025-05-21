@@ -29,12 +29,11 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.fromTo(
       navAnimation.current,
-      { y: "-100%", opacity: 0 },
+      { opacity: 0 },
       {
-        y: 0,
         opacity: 1,
-        duration: 1.2,
-        ease: "bounce.out", // bounce effect
+        duration: 0.8,
+        ease: "power3.in",
       }
     );
   });
@@ -43,7 +42,8 @@ const Navbar = () => {
     <Disclosure
       ref={navAnimation}
       as="nav"
-      className="bg-gray-100/50 z-50 sticky top-0 shadow-lg"
+      className="bg-gradient-to-tr from-indigo-300 via-pink-300 to-blue-300 
+opacity-30  z-50 sticky top-0 shadow-lg"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
