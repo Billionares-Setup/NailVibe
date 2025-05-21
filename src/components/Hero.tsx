@@ -1,8 +1,14 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useRef } from "react";
-import royalLogo from "../assets/RoyalNailsLogo.jpg";
-import nails from "../assets/Nails.png";
+import royalHero from "../assets/RoyalHero.png";
+
 import nails2 from "../assets/Nails2.png";
+import pink from "../assets/Pink.png";
+import greenNails from "../assets/GreenNails.png";
+import paint from "../assets/Paint.png";
+import paint2 from "../assets/Paint2.png";
+import butterfly from "../assets/Butterfly.png";
+
 // import crown from "../assets/Crown.png";
 import crowntransparent from "../assets/CrownTransparent.png";
 
@@ -151,46 +157,59 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div className="relative w-screen h-screen overflow-hidden text-center shadow-lg">
-        {/* <div className="absolute flex flex-col items-center justify-center top-4 right-8">
-  <Icon icon="skill-icons:instagram" className=" size-12" />{" "}
-  <Icon
-    icon="fe:facebook"
-    className="mt-2  size-[3.5em] text-blue-500"
-  />
-</div> */}
+      <div
+        className="relative w-screen h-screen overflow-hidden text-center bg-fixed bg-center bg-cover shadow-lg"
+        style={{ backgroundImage: `url(${pink})` }}
+      >
         {/* Top-left image */}
         <img
           ref={handLeft}
-          src={nails}
+          src={butterfly}
           alt="Nails1"
-          className="absolute top-0 left-0 size-[20em]"
+          className="absolute top-0 -left-20 w-[36em]"
+        />
+        <img
+          ref={handLeft}
+          src={greenNails}
+          alt="Nails1"
+          className="absolute bottom-0 left-0"
         />
 
-        {/* Center image */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div ref={logoRender} className="relative">
+        {/* Center content */}
+        <div className="absolute inset-0 flex items-start justify-center pt-72 sm:pt-20 xl:pt-10 ">
+          <div ref={logoRender} className="relative flex flex-col items-center">
             <img
               src={crowntransparent}
               alt="crown"
-              className="absolute bottom-[250px] left-8 z-10 h-[12em] w-[16em]"
-            />
-            <img
-              src={royalLogo}
-              alt="Royal Nails & Spa Logo"
-              className="size-[20em] border-2 border-purple-400  rounded-full z-20 relative"
-            />
+              className="z-10 w-40 h-32 sm:h-40 sm:w-52 md:h-48 md:w-64"
+            />{" "}
+            <p className="z-10 self-start px-6 pt-2 pb-4 text-5xl font-semibold text-white rounded-full sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-tr from-indigo-500/80 via-pink-500/50 to-blue-500/50">
+              <span style={{ fontFamily: '"Ephesis", cursive' }}>Royal </span>
+              <span className="ml-2 font-sans text-2xl sm:text-3xl md:text-5xl">
+                Nails & Spa
+              </span>
+            </p>
+            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition rounded-full text-amber-900 bg-amber-400 hover:bg-amber-500">
+              The Royal Services
+            </button>
           </div>
         </div>
 
-        {/* Bottom-right image */}
+        {/* Decorative image on top-right */}
         <img
           ref={handRight}
-          src={nails2}
-          alt="Nails2"
-          className="absolute bottom-0 right-0 size-[20em]  overflow-clip"
+          src={royalHero}
+          alt="royalHero"
+          className="absolute top-0 right-0 w-[28em] overflow-clip"
+        />
+        <img
+          ref={handRight}
+          src={paint2}
+          alt="royalHero"
+          className="absolute -bottom-20 -right-40 w-[45em] overflow-clip"
         />
       </div>
+
       <div
         ref={sectionRef}
         className="flex flex-col items-center justify-center mt-12 "
@@ -277,7 +296,7 @@ const Hero = () => {
                     href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-violet-600 hover:bg-violet-400"
+                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 hover:bg-violet-400"
                   >
                     <div className="flex items-center justify-center gap-2">
                       <Icon
