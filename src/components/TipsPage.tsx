@@ -21,33 +21,38 @@ const TipsPage = () => {
       "✂️ Trim your nails regularly with sharp manicure scissors or clippers",
       "🔴 Always file in one direction to prevent splitting and weakening",
       "🧴 Apply moisturizer to your nails and cuticles daily",
-      "🧤 Wear gloves when doing household chores or working with chemicals"
+      "🧤 Wear gloves when doing household chores or working with chemicals",
+      "🛡️ Limit prolonged exposure to water to reduce risk of nail splitting"
     ],
     manicure: [
       "💅 Always start with clean, dry nails before applying polish",
       "🖍️ Use thin coats of polish rather than one thick coat",
       "🌬️ Allow each coat to dry completely before applying the next",
       "🚱️ Apply a base coat to prevent staining and extend polish life",
-      "✨ Finish with a top coat for extra shine and protection"
+      "✨ Finish with a top coat for extra shine and protection",
+      "🎯 Cap the free edge of your nail with polish to help prevent early chipping"
     ],
     health: [
       "🍎 Eat a balanced diet rich in biotin (eggs, nuts, salmon)",
       "💧 Stay hydrated to prevent brittle nails",
       "🚭 Avoid using your nails as tools to prevent breakage",
       "🧺 Consult a dermatologist for persistent nail problems",
-      "🧴 Don't cut your cuticles - gently push them back instead"
+      "🧴 Don't cut your cuticles - gently push them back instead",
+      "⛔ Don't pick at chipped polish — it can take layers of your nail with it"
     ],
     seasonal: [
       "❄️ In winter, apply extra moisturizer to combat dryness",
       "☀️ Use UV-protective top coats in summer to prevent discoloration",
       "🌧️ Wear gloves in rainy weather to prevent waterlogged nails",
       "🍂 Fall is perfect for deep conditioning treatments",
-      "🌸 Spring is ideal for lighter, breathable polish formulas"
+      "🌸 Spring is ideal for lighter, breathable polish formulas",
+      "🎒 During back-to-school season, simplify your routine with long-lasting gel polish"
     ],
     'salon-feature': [
       "👑 10+ years in Brantford with 20+ years combined experience",
       "🏱 Gift certificates NEVER expire - perfect anytime gift",
-      "💫 Special packages available"
+      "💫 Special packages available",
+      "🍩 Our cozy Brantford location used to be a donut shop"
     ],
     service: [
       "♿ Wheelchair-friendly pedicure stations available",
@@ -58,7 +63,10 @@ const TipsPage = () => {
     policy: [
       "💖 No cancellation fees - we understand life happens",
       "🔒 Privacy-focused service with discreet options",
-      "🔄 100% satisfaction guarantee on all services"
+      "🔄 100% satisfaction guarantee on all services",
+      "🧾 Receipts available upon request for all services and payments",
+      "👥 Group bookings welcome",
+      "🧍 Walk-ins are welcome, appointments are recommended"
     ]
   };
 
