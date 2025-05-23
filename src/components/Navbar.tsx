@@ -39,11 +39,7 @@ const Navbar = () => {
   });
 
   return (
-    <Disclosure
-      ref={navAnimation}
-      as="nav"
-      className="sticky top-0 z-50 shadow-lg bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 opacity-30"
-    >
+    <Disclosure ref={navAnimation} as="nav" className="sticky top-0 z-30 ">
       <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -67,13 +63,13 @@ const Navbar = () => {
                   {`@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');`}
                 </style>
                 <span
-                  className="mx-2 text-3xl font-medium text-white"
+                  className="mx-2 text-3xl font-medium text-indigo-900"
                   style={{ fontFamily: "Ephesis, cursive", fontSize: "2rem" }}
                 >
                   Royal
                 </span>
                 <span
-                  className="text-xs text-white "
+                  className="text-xs text-indigo-900 "
                   style={{
                     fontFamily: '"Open Sans", sans-serif',
                     fontSize: "1rem",
@@ -94,9 +90,9 @@ const Navbar = () => {
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
-                        ? "bg-white text-indigo-900"
-                        : "text-white hover:bg-indigo-600 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
+                        ? " bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500  text-white  "
+                        : " bg-gradient-to-tr from-indigo-300 via-pink-300 to-blue-300  text-indigo-900  ",
+                      "rounded-full px-3 py-2 text-xs hover:bg-gradient-to-tr hover:from-indigo-400 hover:via-pink-400 hover:to-blue-400  hover:text-white hover:scale-[108%] duration-300 ease-out "
                     )}
                   >
                     {item.name}
