@@ -3,7 +3,8 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { Icon } from '@iconify/react';
 
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN; // API Key is in .env
+// mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN; // API Key is in .env
+mapboxgl.accessToken = "pk.eyJ1IjoibG9uZ3RydW9uZyIsImEiOiJjbWFqMHY1Mm4wbWpuMmxxNDZzN3BiY29xIn0.33eIOuXbidvaq16gA5fLzQ";
 
 const MapSection: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
