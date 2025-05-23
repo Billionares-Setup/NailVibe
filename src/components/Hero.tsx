@@ -157,10 +157,7 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div
-        className="relative w-screen h-screen overflow-hidden text-center bg-fixed bg-center bg-cover shadow-lg"
-        style={{ backgroundImage: `url(${pink})` }}
-      >
+      <div className="relative w-screen h-screen overflow-hidden text-center bg-fixed bg-center bg-cover shadow-lg bg-gradient-to-r from-indigo-100 via-pink-50 to-white">
         {/* Top-left image */}
         <img
           ref={handLeft}

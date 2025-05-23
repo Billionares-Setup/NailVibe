@@ -42,7 +42,7 @@ const Navbar = () => {
     <Disclosure
       ref={navAnimation}
       as="nav"
-      className="sticky top-0 z-50 shadow-lg bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 opacity-30"
+      className="sticky top-0 z-50 shadow-lg bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 opacity-30"
     >
       <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
