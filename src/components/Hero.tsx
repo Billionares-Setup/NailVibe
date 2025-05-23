@@ -157,42 +157,39 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div className="relative w-screen h-screen overflow-hidden text-center bg-fixed bg-center bg-cover shadow-lg bg-gradient-to-r from-indigo-100 via-pink-50 to-white">
-        {/* Top-left image */}
+      <div className="relative w-screen h-screen overflow-hidden text-center bg-center shadow-lg ">
         <img
           ref={handLeft}
           src={butterfly}
           alt="Nails1"
-          className="absolute top-0 -left-20 w-[36em]"
+          className="absolute top-0 -left-64 w-[75em]"
         />
-        <img
+        {/* <img
           ref={handLeft}
           src={greenNails}
           alt="Nails1"
           className="absolute bottom-0 left-0"
-        />
+        /> */}
 
-        {/* Center content */}
-        <div className="absolute inset-0 flex items-start justify-center pt-72 sm:pt-20 xl:pt-10 ">
+        <div className="absolute flex items-start justify-start bottom-32 left-40 ">
           <div ref={logoRender} className="relative flex flex-col items-center">
             <img
               src={crowntransparent}
               alt="crown"
               className="z-10 w-40 h-32 sm:h-40 sm:w-52 md:h-48 md:w-64"
             />{" "}
-            <p className="z-10 self-start px-6 pt-2 pb-4 text-5xl font-semibold text-white rounded-full sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-tr from-indigo-500/80 via-pink-500/50 to-blue-500/50">
+            <p className="z-10 self-start px-6 pt-2 pb-4 text-5xl font-semibold text-white rounded-full sm:text-2xl md:text-3xl lg:text-5xl bg-gradient-to-tr from-indigo-500/80 via-pink-500/50 to-blue-500/50">
               <span style={{ fontFamily: '"Ephesis", cursive' }}>Royal </span>
-              <span className="ml-2 font-sans text-2xl sm:text-3xl md:text-5xl">
+              <span className="ml-2 font-sans text-2xl sm:text-3xl md:text-4xl">
                 Nails & Spa
               </span>
             </p>
-            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition rounded-full text-amber-900 bg-amber-400 hover:bg-amber-500">
+            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition border-2 rounded-full border-amber-400 text-amber-900 bg-amber-300 hover:ring hover:scale-[103%] duration-300 ease-out hover:bg-amber-200 ring-amber-300">
               The Royal Services
             </button>
           </div>
         </div>
 
-        {/* Decorative image on top-right */}
         <img
           ref={handRight}
           src={royalHero}
@@ -203,7 +200,7 @@ const Hero = () => {
           ref={handRight}
           src={paint2}
           alt="royalHero"
-          className="absolute -bottom-20 -right-40 w-[45em] overflow-clip"
+          className="absolute -bottom-20 -right-12 w-[45em] overflow-clip"
         />
       </div>
 
