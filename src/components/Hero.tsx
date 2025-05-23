@@ -20,11 +20,12 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MapSection from "./MapSection";
+import { useNavigate } from "react-router";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const storeImages = [store1, store2, store3];
-
+ const navigate = useNavigate();
   //slideshow for the images
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalStarted = useRef(false);
@@ -184,7 +185,7 @@ const Hero = () => {
                 Nails & Spa
               </span>
             </p>
-            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition border-2 rounded-full border-amber-400 text-amber-900 bg-amber-300 hover:ring hover:scale-[103%] duration-300 ease-out hover:bg-amber-200 ring-amber-300">
+            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition border-2 rounded-full border-amber-400 text-amber-900 bg-amber-300 hover:ring hover:scale-[103%] duration-300 ease-out hover:bg-amber-200 ring-amber-300" onClick={() => navigate("/services")}>
               The Royal Services
             </button>
           </div>
@@ -305,7 +306,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="w-full lg:col-span-3">
-            <MapSection />
+            {/* <MapSection /> */}
           </div>
         </div>
       </div>

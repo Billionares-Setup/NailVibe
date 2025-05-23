@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
+import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import Review from "./components/Review";
 import Services from "./components/Services";
@@ -8,8 +9,7 @@ import TipsPage from "./components/TipsPage";
 
 const MainPage = () => {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div className="relative min-h-screen overflow-hidden bg-gradient-to-tr from-gray-100 via-slate-100 to-white">
         {/* Pinkish Spots Start */}
         <div
@@ -30,13 +30,12 @@ opacity-40 blur-3xl  overscroll-none "
         ></div>
         {/* Pinkish Spots End */}
         <Hero />
-        <Services />
         <Gallery />
         <TipsPage />
         <Review />
-        <Footer />
+     
       </div>
-    </div>
+    </Layout>
   );
 };
 
