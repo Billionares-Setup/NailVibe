@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="z-50 px-8 py-16 border-t bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 md:px-24 border-violet-800"
+      className="z-50 px-8 py-16 border-t bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 md:px-24 border-violet-800"
     >
       <div className="grid grid-cols-1 gap-6 mx-auto text-left max-w-7xl sm:grid-cols-3 sm:text-left">
         {/* Contact Info */}
