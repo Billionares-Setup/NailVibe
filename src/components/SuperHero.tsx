@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useRef } from "react";
-import businessCard from "../assets/BusinessCard.jpg";
+import businessCard from "../assets/BusinessCard.png";
 
 import paint2 from "../assets/Paint2.png";
 import crown from "../assets/Crown.png";
@@ -74,7 +74,7 @@ const SuperHero = () => {
             <img
               src={businessCard}
               alt="crown "
-              className="w-1/2 mx-5 border-2 rounded-3xl "
+              className="w-1/2 mx-5 border-2 rounded-3xl"
             />
             <div className="flex  w-[80%] py-10 mx-5 mb-12  text-justify text-indigo-900 ">
               <div className="relative !z-50 px-5 py-6 text-xl text-indigo-100 bg-gray-200 shadow-xl rounded-xl">
