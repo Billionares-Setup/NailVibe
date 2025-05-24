@@ -1,16 +1,5 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useRef } from "react";
-import royalHero from "../assets/RoyalHero.png";
-
-import nails2 from "../assets/Nails2.png";
-import pink from "../assets/Pink.png";
-import greenNails from "../assets/GreenNails.png";
-import paint from "../assets/Paint.png";
-import paint2 from "../assets/Paint2.png";
-import butterfly from "../assets/Butterfly.png";
-
-// import crown from "../assets/Crown.png";
-import crowntransparent from "../assets/CrownTransparent.png";
 
 import { useState } from "react";
 import store1 from "../assets/store/store1.jpg";
@@ -20,8 +9,10 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MapSection from "./MapSection";
+import SuperHero from "./SuperHero";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
   const storeImages = [store1, store2, store3];
 
@@ -62,53 +53,6 @@ const Hero = () => {
     },
     { scope: main }
   );
-
-  //GSAP animation for left-hand
-  const handLeft = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      handLeft.current,
-      { x: "-100vw", y: "-100vh", opacity: 0 },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        delay: 0.5,
-        duration: 3,
-        ease: "power2.out",
-      }
-    );
-  });
-
-  //GSAP animation for right-hand
-  const handRight = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      handRight.current,
-      { x: "130vw", y: "130vh", opacity: 0 },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        delay: 1,
-        duration: 3,
-        ease: "power2.out",
-      }
-    );
-  });
-  //GSAP animation for right-hand
-  const logoRender = useRef(null);
-  useGSAP(() => {
-    gsap.fromTo(
-      logoRender.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-        ease: "power3.in",
-      }
-    );
-  });
 
   //Image Zoom animation
   const imageRef = useRef(null);
@@ -157,62 +101,16 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div className="relative w-screen h-screen overflow-hidden text-center bg-center shadow-lg ">
-        <img
-          ref={handLeft}
-          src={butterfly}
-          alt="Nails1"
-          className="absolute top-0 -left-64 w-[75em]"
-        />
-        {/* <img
-          ref={handLeft}
-          src={greenNails}
-          alt="Nails1"
-          className="absolute bottom-0 left-0"
-        /> */}
-
-        <div className="absolute flex items-start justify-start bottom-32 left-40 ">
-          <div ref={logoRender} className="relative flex flex-col items-center">
-            <img
-              src={crowntransparent}
-              alt="crown"
-              className="z-10 w-40 h-32 sm:h-40 sm:w-52 md:h-48 md:w-64"
-            />{" "}
-            <p className="z-10 self-start px-6 pt-2 pb-4 text-5xl font-semibold text-white rounded-full sm:text-2xl md:text-3xl lg:text-5xl bg-gradient-to-tr from-indigo-500/80 via-pink-500/50 to-blue-500/50">
-              <span style={{ fontFamily: '"Ephesis", cursive' }}>Royal </span>
-              <span className="ml-2 font-sans text-2xl sm:text-3xl md:text-4xl">
-                Nails & Spa
-              </span>
-            </p>
-            <button className="z-10 w-full px-4 py-2 mt-4 text-lg font-semibold transition border-2 rounded-full border-amber-400 text-amber-900 bg-amber-300 hover:ring hover:scale-[103%] duration-300 ease-out hover:bg-amber-200 ring-amber-300">
-              The Royal Services
-            </button>
-          </div>
-        </div>
-
-        <img
-          ref={handRight}
-          src={royalHero}
-          alt="royalHero"
-          className="absolute top-0 right-0 w-[28em] overflow-clip"
-        />
-        <img
-          ref={handRight}
-          src={paint2}
-          alt="royalHero"
-          className="absolute -bottom-20 -right-12 w-[45em] overflow-clip"
-        />
-      </div>
-
+      <SuperHero />
       <div
         ref={sectionRef}
         className="flex flex-col items-center justify-center mt-12 "
       >
         <div className="flex items-start justify-end">
-          <p className="mx-2 text-4xl font-semibold text-center text-indigo-800 sm:text-5xl ">
+          <p className="mx-2 text-4xl font-semibold text-center text-indigo-900 sm:text-5xl ">
             Welcome to{" "}
             <span
-              className="mr-2 text-4xl font-semibold text-center text-indigo-800 md:text-6xl "
+              className="mr-2 text-4xl font-semibold text-center text-indigo-900 md:text-6xl "
               style={{
                 fontFamily: '"Ephesis", cursive',
               }}

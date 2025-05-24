@@ -12,7 +12,7 @@ const MainPage = () => {
       <Navbar />
       <div className="relative min-h-screen overflow-hidden bg-gradient-to-tr from-gray-100 via-slate-100 to-white">
         {/* Pinkish Spots Start */}
-        <div
+        {/* <div
           className="fixed left-0 top-[2em] w-[30rem] h-[30rem] rounded-full 
 bg-gradient-to-tr from-rose-400 via-pink-400 to-blue-400 
 opacity-50 blur-3xl overscroll-none "
@@ -27,7 +27,7 @@ opacity-50 blur-3xl  overscroll-none "
           className="fixed right-0 top-0 w-[20rem] h-[20rem] rounded-full 
 bg-gradient-to-tr from-purple-400 via-pink-400 to-blue-400 
 opacity-40 blur-3xl  overscroll-none "
-        ></div>
+        ></div> */}
         {/* Pinkish Spots End */}
         <Hero />
         <Services />
