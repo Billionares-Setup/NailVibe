@@ -188,7 +188,7 @@ const Hero = () => {
                     href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 hover:bg-violet-400"
+                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 hover:bg-gradient-to-tr hover:from-indigo-500 hover:via-pink-500 hover:to-blue-500"
                   >
                     <div className="flex items-center justify-center gap-2">
                       <Icon
