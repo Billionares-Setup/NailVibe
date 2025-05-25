@@ -25,7 +25,7 @@ const Services = () => {
           ease: "power3.out", // smooth easing
           scrollTrigger: {
             trigger: container,
-            start: "top 85%",
+            start: "top 96%",
             toggleActions: "play none none none", // allow reverse on scroll up
           },
         }
@@ -35,10 +35,7 @@ const Services = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <div
-      ref={sectionRef}
-      className="relative px-6 py-16 isolate sm:py-16 lg:px-8"
-    >
+    <div ref={sectionRef} className="relative lg:px-8">
       {/* Title & Description */}
       <div className="max-w-4xl mx-auto text-center">
         <div className="flex items-center justify-center gap-3">

@@ -91,7 +91,7 @@ const Hero = () => {
           ease: "power3.out", // smooth easing
           scrollTrigger: {
             trigger: container,
-            start: "top 85%",
+            start: "top 96%",
             toggleActions: "play none none none", // allow reverse on scroll up
           },
         }
@@ -203,7 +203,9 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:col-span-3">{/* <MapSection /> */}</div>
+          <div className="w-full lg:col-span-3">
+            <MapSection />
+          </div>
         </div>
       </div>
     </div>

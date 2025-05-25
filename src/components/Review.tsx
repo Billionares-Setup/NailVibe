@@ -22,7 +22,7 @@ export default function Review() {
           ease: "power3.out", // smooth easing
           scrollTrigger: {
             trigger: container,
-            start: "top 85%",
+            start: "top 96%",
             toggleActions: "play none none none", // allow reverse on scroll up
           },
         }

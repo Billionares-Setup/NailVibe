@@ -81,7 +81,7 @@ const Gallery = () => {
           ease: "power3.out", // smooth easing
           scrollTrigger: {
             trigger: container,
-            start: "top 85%",
+            start: "top 96%",
             toggleActions: "play none none none", // allow reverse on scroll up
           },
         }
@@ -91,23 +91,26 @@ const Gallery = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <div ref={sectionRef} className="overflow-hidden whitespace-nowrap   pb-16">
+    <div
+      ref={sectionRef}
+      className="pt-16 overflow-hidden pb-14 whitespace-nowrap"
+    >
       {/* Title & Description */}
-      <div className="mx-auto max-w-4xl text-center mb-8">
-        <div className="flex gap-3 items-center justify-center">
+      <div className="max-w-4xl mx-auto mb-8 text-center">
+        <div className="flex items-center justify-center gap-3">
           <Icon
             icon="arcticons:1gallery"
             className="size-14 text-indigo-800 stroke-[1.5px]"
           />
-          <h2 className="text-4xl md:text-5xl font-semibold text-indigo-800">
+          <h2 className="text-4xl font-semibold text-indigo-800 md:text-5xl">
             The Royal Finish
           </h2>
         </div>
-        <p className="text-2xl font-medium text-indigo-500 z-20">
+        <p className="z-20 text-2xl font-medium text-indigo-500">
           Where every set is fit for royalty.
         </p>
       </div>
-      <div className="flex w-max gap-10 animate-infinite-scroll hover:paused ">
+      <div className="flex gap-10 w-max animate-infinite-scroll hover:paused ">
         {[...images, ...images].map((image, index) => (
           <div
             key={index}
@@ -116,7 +119,7 @@ const Gallery = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-60 object-cover transition-transform duration-300 hover:scale-105"
+              className="object-cover w-full transition-transform duration-300 h-60 hover:scale-105"
             />
           </div>
         ))}

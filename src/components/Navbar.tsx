@@ -94,9 +94,9 @@ const Navbar = () => {
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
-                        ? " bg-white  text-indigo-900 font-semibold hover:bg-white"
+                        ? " bg-white  text-indigo-900 font-semibold hover:bg-white "
                         : " border  text-white  ",
-                      "rounded-full px-3 py-2 text-xs hover:bg-blue-600/30 hover:scale-[108%] duration-300 ease-out "
+                      "rounded-full px-3 py-2 text-sm hover:bg-blue-600/30 hover:scale-[108%] duration-300 ease-out "
                     )}
                   >
                     {item.name}
