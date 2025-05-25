@@ -174,7 +174,7 @@ const Hero = () => {
                       icon="mdi:clock-outline"
                       className="mt-0.5 text-red-600 size-5"
                     />
-                    <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
+                    <p>Mon-Fri: 9 AM - 7 PM | Sat: 9 AM - 6 PM</p>
                   </div>
 
                   <div className="flex items-center gap-2">
