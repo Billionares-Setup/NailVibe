@@ -144,7 +144,7 @@ const TipsPage = () => {
             onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 border ${
               activeCategory === category
-                ? " bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 text-white shadow-md"
+                ? " bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 text-white shadow-md"
                 : "bg-white text-violet-500 border-violet-600 hover:bg-violet-50"
             }`}
           >
@@ -178,7 +178,7 @@ const TipsPage = () => {
         })}
       </div>
 
-      <div className="p-6 text-center text-white rounded-lg bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500 ">
+      <div className="p-6 text-center text-white rounded-lg bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 ">
         <h3 className="mb-2 text-xl font-semibold">Professional Advice</h3>
         <p className="max-w-xl mx-auto mb-4">
           While these tips are helpful, nothing beats professional care. Visit

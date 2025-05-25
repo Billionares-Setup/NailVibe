@@ -37,34 +37,20 @@ const Services = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative isolate px-6 py-16 sm:py-16 lg:px-8"
+      className="relative px-6 py-16 isolate sm:py-16 lg:px-8"
     >
-      {/* Background Shape */}
-      <div
-        className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        ></div>
-      </div>
-
       {/* Title & Description */}
-      <div className="mx-auto max-w-4xl text-center">
-        <div className="flex gap-3 items-center justify-center">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="flex items-center justify-center gap-3">
           <Icon
             icon="arcticons:royal-tsd"
             className="size-20 text-indigo-800 stroke-[1.5px]"
           />
-          <h2 className="text-4xl md:text-5xl font-semibold text-indigo-800">
+          <h2 className="text-4xl font-semibold text-indigo-800 md:text-5xl">
             The Royal Menu
           </h2>
         </div>
-        <p className="text-2xl font-medium text-indigo-500 z-20">
+        <p className="z-20 text-2xl font-medium text-indigo-500">
           You deserve to be treated like Royalty
         </p>
       </div>
@@ -73,7 +59,7 @@ const Services = () => {
       <div className="flex justify-center mt-4 sm:mt-6">
         <Carousel
           pauseOnHover
-          className="w-full max-w-4xl px-4 sm:px-6 md:px-8 h-auto"
+          className="w-full h-auto max-w-4xl px-4 sm:px-6 md:px-8"
           slide={true}
           indicators={false}
         >
