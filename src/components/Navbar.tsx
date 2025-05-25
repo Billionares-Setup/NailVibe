@@ -13,8 +13,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "Services", href: "/services", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
 ];
@@ -39,42 +39,37 @@ const Navbar = () => {
   });
 
   return (
-    <Disclosure
-      ref={navAnimation}
-      as="nav"
-      className="bg-gradient-to-tr from-indigo-300 via-pink-300 to-blue-300 
-opacity-30  z-50 sticky top-0 shadow-lg"
-    >
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+    <Disclosure ref={navAnimation} as="nav" className="sticky top-0 z-30 ">
+      <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton className="relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md group hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Icon icon="mdi-light:home" /> <Icon icon="mdi-light:home" />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
+          <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+            <div className="flex items-center shrink-0">
               <img
                 src={royalLogo}
                 alt="Royal Nails & Spa Logo"
                 className=" size-[3em] rounded-full border-2 border-violet-300"
               />
-              <div className="flex shrink-0 items-center">
+              <div className="flex items-center shrink-0">
                 <style>
                   {`@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');`}
                   {`@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');`}
                 </style>
                 <span
-                  className="text-indigo-800 font-medium text-3xl mx-2"
+                  className="mx-2 text-3xl font-medium text-indigo-900"
                   style={{ fontFamily: "Ephesis, cursive", fontSize: "2rem" }}
                 >
                   Royal
                 </span>
                 <span
-                  className=" text-xs text-indigo-800 "
+                  className="text-xs text-indigo-900 "
                   style={{
                     fontFamily: '"Open Sans", sans-serif',
                     fontSize: "1rem",
@@ -85,7 +80,7 @@ opacity-30  z-50 sticky top-0 shadow-lg"
               </div>
             </div>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+          <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-end">
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4 ">
                 {navigation.map((item) => (
@@ -95,9 +90,9 @@ opacity-30  z-50 sticky top-0 shadow-lg"
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
-                        ? "bg-violet-300 text-violet-900"
-                        : "text-violet-500 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
+                        ? " bg-gradient-to-tr from-indigo-500 via-pink-500 to-blue-500  text-white  "
+                        : " bg-gradient-to-tr from-indigo-300 via-pink-300 to-blue-300  text-indigo-900  ",
+                      "rounded-full px-3 py-2 text-xs hover:bg-gradient-to-tr hover:from-indigo-400 hover:via-pink-400 hover:to-blue-400  hover:text-white hover:scale-[108%] duration-300 ease-out "
                     )}
                   >
                     {item.name}
@@ -110,7 +105,7 @@ opacity-30  z-50 sticky top-0 shadow-lg"
       </div>
 
       <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
+        <div className="px-2 pt-2 pb-3 space-y-1">
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
