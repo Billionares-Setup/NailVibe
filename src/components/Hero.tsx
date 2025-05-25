@@ -139,65 +139,85 @@ const Hero = () => {
                 {/* Info Card - will stay attached & scale with image on hover */}
                 <div
                   ref={address}
-                  className="address absolute bottom-2 right-2 bg-gray-50/80 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
+                  className="address absolute bottom-2 right-2 bg-gray-100 border border-gray-300 rounded-xl shadow-xl w-[20em] p-3 space-y-2 text-sm sm:text-xs"
                 >
-                  <div className="flex items-center gap-2">
-                    <p
-                      className="text-3xl font-bold leading-none text-violet-900"
-                      style={{ fontFamily: '"Ephesis", cursive' }}
-                    >
-                      Royal
-                    </p>
-                    <span className="mt-1 text-base font-semibold text-violet-900">
-                      Nails & Spa
-                    </span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-pink-100 rounded-lg dark:bg-pink-900">
+                      <Icon
+                        icon="emojione:crown"
+                        className="w-6 h-6 text-pink-600 dark:text-pink-300"
+                      />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <p
+                        className="text-3xl font-bold leading-none text-violet-900"
+                        style={{ fontFamily: '"Ephesis", cursive' }}
+                      >
+                        Royal
+                      </p>
+                      <span className="mt-1 text-base font-semibold text-violet-900">
+                        Nails & Spa
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="flex items-start gap-2">
-                    <Icon
-                      icon="mdi:location"
-                      className="mt-0.5 text-red-600 size-5"
-                    />
-                    <p>161 Colborne St W, Brantford, ON N3T 1L2</p>
-                  </div>
+                  <div className="space-y-2">
+                    <div className="flex gap-3">
+                      <div className="mt-1 text-gray-500 dark:text-gray-400">
+                        <Icon icon="mdi:map-marker" className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-700 dark:text-gray-300">
+                          161 Colborne St W
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                          Brantford, ON N3T 1L2
+                        </p>
+                      </div>
+                    </div>
 
-                  <div className="flex items-start gap-2">
-                    <Icon
-                      icon="material-symbols:call"
-                      className="mt-0.5 text-red-600 size-5"
-                    />
-                    <p>(519) 304-9044</p>
-                  </div>
+                    <div className="flex items-center gap-3">
+                      <div className="mt-1 text-gray-500 dark:text-gray-400">
+                        <Icon icon="mdi:phone" className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-700 dark:text-gray-300">
+                          (519) 304-9044
+                        </p>
+                      </div>
+                    </div>
 
-                  <div className="flex items-start gap-2">
-                    <Icon
-                      icon="mdi:clock-outline"
-                      className="mt-0.5 text-red-600 size-5"
-                    />
-                    <p>Mon–Fri: 9 AM – 7 PM | Sat: 9 AM – 6 PM</p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <Icon
-                      icon="ci:house-close"
-                      className="mt-0.5 text-red-600 size-5"
-                    />
-                    <p>Closed on Sundays</p>
+                    <div className="flex gap-3">
+                      <div className="mt-1 text-gray-500 dark:text-gray-400">
+                        <Icon icon="mdi:clock-outline" className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-700 dark:text-gray-300">
+                          Business Hours
+                        </p>
+                        <div className="space-y-1 text-gray-500 dark:text-gray-400">
+                          <p className="font-semibold text-green-600">
+                            Mon-Fri: 9 AM - 7 PM
+                          </p>
+                          <p className="font-semibold text-green-600">
+                            Saturday: 9 AM - 6 PM
+                          </p>
+                          <p className="font-semibold text-red-500 dark:text-red-400">
+                            Sunday: Closed
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <a
                     href="https://www.google.com/maps/place/Royal+Nails+And+Spa/@43.1318112,-80.2803425,16z/data=!3m1!4b1!4m6!3m5!1s0x882c68a0a6ef3a79:0xff42fc0c984bec55!8m2!3d43.1318112!4d-80.2777676!16s%2Fg%2F11b6j877qz?entry=ttu"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 mt-4 font-semibold text-center text-white transition rounded-lg bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 hover:bg-gradient-to-tr hover:from-indigo-500 hover:via-pink-500 hover:to-blue-500"
+                    className="flex items-center justify-center w-full gap-2 px-6 py-2 font-semibold text-white transition bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg"
                   >
-                    <div className="flex items-center justify-center gap-2">
-                      <Icon
-                        icon="material-symbols:map-outline"
-                        className="mt-0.5  size-5"
-                      />
-                      <p className="uppercase ">Get Directions</p>
-                    </div>
+                    <Icon icon="mdi:map-outline" className="w-5 h-5" />
+                    Get Directions
                   </a>
                 </div>
               </div>
