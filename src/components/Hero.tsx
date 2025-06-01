@@ -199,13 +199,13 @@ const Hero = () => {
                           Business Hours
                         </p>
                         <div className="space-y-1 text-gray-500 dark:text-gray-400">
-                          <p className="font-semibold text-green-600">
+                          <p className="font-normal text-green-600">
                             Mon-Fri: 9 AM - 7 PM
                           </p>
-                          <p className="font-semibold text-green-600">
+                          <p className="font-normal text-green-600">
                             Saturday: 9 AM - 6 PM
                           </p>
-                          <p className="font-semibold text-red-500 dark:text-red-400">
+                          <p className="font-normal text-red-500 dark:text-red-400">
                             Sunday: Closed
                           </p>
                         </div>
