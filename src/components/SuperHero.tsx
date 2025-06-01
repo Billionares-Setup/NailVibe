@@ -46,6 +46,21 @@ const SuperHero = () => {
     );
   });
 
+  const cardSm = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      cardSm.current,
+      { x: "0vw", y: "-300vh" },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        delay: 0.5,
+        duration: 0.8,
+        ease: "power1.out",
+      }
+    );
+  });
   return (
     <div ref={entireHero} className="rounded-tl-3xl">
       <div
@@ -106,6 +121,12 @@ const SuperHero = () => {
 
         {/* Right 40% - Brand content */}
         <div className="relative flex flex-col items-center justify-center pb-10 pr-24 md:col-span-2 bg-gradient-to-b from-indigo-300 via-pink-100/30 to-transparent backdrop-brightness-110">
+          <img
+            ref={cardSm}
+            src={businessCard}
+            alt="crown "
+            className="absolute z-10 w-4/5 border-2 sm:w-1/2 top-6 right-6 md:hidden rounded-3xl"
+          />
           <div className="relative flex flex-col items-center text-white">
             <img
               src={crown}
