@@ -17,6 +17,7 @@ const Footer = () => {
 
   return (
     <footer
+      id="contact"
       ref={footerRef}
       className="z-50 px-8 py-16 border-t bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 md:px-24 border-violet-800"
     >

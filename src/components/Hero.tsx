@@ -106,6 +106,7 @@ const Hero = () => {
         <SuperHero />
       </div>
       <div
+        id="location"
         ref={sectionRef}
         className="flex flex-col items-center justify-center mt-12 "
       >

@@ -6,17 +6,19 @@ import {
 } from "@headlessui/react";
 import royalLogo from "../assets/RoyalNailsLogo.jpg";
 import { useRef } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const navigation = [
   { name: "Home", href: "/", current: true },
+  { name: "Location", href: "/#location", current: false },
   { name: "Services", href: "/services", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Gallery", href: "/#gallery", current: false },
+  { name: "Contact", href: "/#contact", current: false },
 ];
 
 function classNames(...classes: (string | false | null | undefined)[]): string {
@@ -24,6 +26,19 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 }
 
 const Navbar = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   //GSAP for nav
   const navAnimation = useRef(null);
   useGSAP(() => {

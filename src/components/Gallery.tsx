@@ -92,8 +92,9 @@ const Gallery = () => {
   }, []);
   return (
     <div
+      id="gallery"
       ref={sectionRef}
-      className="pt-16 overflow-hidden pb-14 whitespace-nowrap"
+      className="pt-16 overflow-hidden pb-14 whitespace-nowrap scroll-smooth"
     >
       {/* Title & Description */}
       <div className="max-w-4xl mx-auto mb-8 text-center">
