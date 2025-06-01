@@ -9,14 +9,14 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MapSection from "./MapSection";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import SuperHero from "./SuperHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const storeImages = [store1, store2, store3];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   //slideshow for the images
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalStarted = useRef(false);
@@ -102,7 +102,9 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <SuperHero />
+      <div className="md:pt-12 md:pl-12">
+        <SuperHero />
+      </div>
       <div
         ref={sectionRef}
         className="flex flex-col items-center justify-center mt-12 "

@@ -29,11 +29,14 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.fromTo(
       navAnimation.current,
-      { opacity: 0 },
+      { x: "-100vw", y: "0vh" },
       {
+        x: 0,
+        y: 0,
         opacity: 1,
-        duration: 0.8,
-        ease: "power3.in",
+        delay: 0,
+        duration: 1,
+        ease: "power1.out",
       }
     );
   });
