@@ -27,7 +27,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 
 const Navbar = () => {
   const location = useLocation();
-
+  const currentPath = location.pathname + location.hash;
   useEffect(() => {
     if (location.hash) {
       const el = document.querySelector(location.hash);
@@ -105,21 +105,24 @@ const Navbar = () => {
           <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-end">
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4 ">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? " bg-white  text-indigo-900 font-semibold hover:bg-white "
-                        : " border  text-white  ",
-                      "rounded-full px-3 py-2 text-sm hover:bg-blue-600/30 hover:scale-[108%] duration-300 ease-out "
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = currentPath === item.href;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
+                      className={classNames(
+                        isActive
+                          ? "bg-white text-indigo-900 font-semibold"
+                          : "border text-white",
+                        "rounded-full px-3 py-2 text-sm hover:scale-[108%] duration-300 ease-out"
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -128,22 +131,25 @@ const Navbar = () => {
 
       <DisclosurePanel className="sm:hidden">
         <div className="px-2 pt-2 pb-3 space-y-1">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-white text-indigo-900"
-                  : "text-white hover:bg-blue-600/30 hover:text-white",
-                "block rounded-md px-3 py-2 text-base font-medium"
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
+          {navigation.map((item) => {
+            const isActive = currentPath === item.href;
+            return (
+              <DisclosureButton
+                key={item.name}
+                as="a"
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={classNames(
+                  isActive
+                    ? "bg-white text-indigo-900"
+                    : "text-white  hover:text-white",
+                  "block rounded-md px-3 py-2 text-base font-medium"
+                )}
+              >
+                {item.name}
+              </DisclosureButton>
+            );
+          })}
         </div>
       </DisclosurePanel>
     </Disclosure>
