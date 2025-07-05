@@ -10,7 +10,10 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const navigation = [
@@ -33,7 +36,11 @@ const Navbar = () => {
       const el = document.querySelector(location.hash);
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: el, offsetY: 80 },
+            ease: "power2.out",
+          });
         }, 100);
       }
     }
@@ -58,6 +65,7 @@ const Navbar = () => {
 
   return (
     <Disclosure
+      id="navbar"
       ref={navAnimation}
       as="nav"
       className="sticky top-0 z-30 bg-gradient-to-tr from-indigo-400 via-pink-400 to-blue-400 "
@@ -108,9 +116,9 @@ const Navbar = () => {
                 {navigation.map((item) => {
                   const isActive = currentPath === item.href;
                   return (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       aria-current={isActive ? "page" : undefined}
                       className={classNames(
                         isActive
@@ -120,7 +128,7 @@ const Navbar = () => {
                       )}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
@@ -134,10 +142,10 @@ const Navbar = () => {
           {navigation.map((item) => {
             const isActive = currentPath === item.href;
             return (
-              <DisclosureButton
+              <Disclosure.Button
                 key={item.name}
-                as="a"
-                href={item.href}
+                as={Link}
+                to={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={classNames(
                   isActive
@@ -147,7 +155,7 @@ const Navbar = () => {
                 )}
               >
                 {item.name}
-              </DisclosureButton>
+              </Disclosure.Button>
             );
           })}
         </div>
