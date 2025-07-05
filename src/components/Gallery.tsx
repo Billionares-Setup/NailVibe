@@ -115,7 +115,7 @@ const Gallery = () => {
         {[...images, ...images].map((image, index) => (
           <div
             key={index}
-            className="min-w-[24em] overflow-hidden rounded-xl shadow-lg border-2 border-violet-400 bg-black hover:scale-110"
+            className="min-w-[24em] overflow-hidden rounded-xl shadow-lg border-2 border-violet-400 bg-black hover:scale-110 transition-transform duration-300 ease-out"
           >
             <img
               src={image.src}
