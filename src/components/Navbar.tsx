@@ -43,6 +43,13 @@ const Navbar = () => {
           });
         }, 100);
       }
+    } else {
+      // Scroll to top when navigating to a new page without a hash (e.g., "/services")
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: 0 },
+        ease: "power2.out",
+      });
     }
   }, [location]);
 
