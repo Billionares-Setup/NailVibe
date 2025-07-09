@@ -1,10 +1,7 @@
-import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
 import Layout from "./components/Layout";
-import Navbar from "./components/Navbar";
 import Review from "./components/Review";
-import Services from "./components/Services";
 import TipsPage from "./components/TipsPage";
 import ClosingNotice from "./components/ClosingNotice";
 
@@ -35,7 +32,6 @@ opacity-40 blur-3xl  overscroll-none "
         <Gallery />
         <TipsPage />
         <Review />
-     
       </div>
     </Layout>
   );

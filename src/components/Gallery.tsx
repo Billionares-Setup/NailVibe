@@ -92,8 +92,9 @@ const Gallery = () => {
   }, []);
   return (
     <div
+      id="gallery"
       ref={sectionRef}
-      className="pt-16 overflow-hidden pb-14 whitespace-nowrap"
+      className="pt-16 overflow-hidden pb-14 whitespace-nowrap scroll-smooth"
     >
       {/* Title & Description */}
       <div className="max-w-4xl mx-auto mb-8 text-center">
@@ -114,7 +115,7 @@ const Gallery = () => {
         {[...images, ...images].map((image, index) => (
           <div
             key={index}
-            className="min-w-[24em] overflow-hidden rounded-xl shadow-lg border-2 border-violet-400 bg-black hover:scale-110"
+            className="min-w-[24em] overflow-hidden rounded-xl shadow-lg border-2 border-violet-400 bg-black hover:scale-110 transition-transform duration-300 ease-out"
           >
             <img
               src={image.src}

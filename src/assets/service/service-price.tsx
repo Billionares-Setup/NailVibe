@@ -104,4 +104,29 @@ export const servicePrice: Service[] = [
     ],
     notes: "Shellac removal is an added charge of $5-$10",
   },
+  {
+    name: "Facial Waxing",
+    description: [
+      {title : "Eyebrows", price: 12},
+      {title: "Eyebrows Tint", price: 20},
+      {title: "Eyebrows Wax + Tint", price: 25},
+      {title: "Lip", price: 5},
+      {title: "Chin", price: 10},
+      {title: "Full Face", price: 30},
+    ] 
+  },
+  {
+    name: "Body Waxing Services",
+    description: [
+      { title: "Under Arms", price: "20+" },
+      { title: "Half Arms", price: 20 },
+      { title: "Full Arms", price: 30 },
+      { title: "Chest", price: "30+" },
+      { title: "Back", price: "25+" },
+      { title: "Half Legs", price: 30 },
+      { title: "Full Legs", price: 50 },
+      { title: "Bikini ", price: "25+" },
+      { title: "Brazilian", price: "50+" },
+    ],
+  }
 ];

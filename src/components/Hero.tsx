@@ -9,14 +9,14 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MapSection from "./MapSection";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import SuperHero from "./SuperHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const storeImages = [store1, store2, store3];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   //slideshow for the images
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalStarted = useRef(false);
@@ -102,8 +102,11 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <SuperHero />
+      <div className="md:pt-12 md:pl-12">
+        <SuperHero />
+      </div>
       <div
+        id="location"
         ref={sectionRef}
         className="flex flex-col items-center justify-center mt-12 "
       >
@@ -196,13 +199,13 @@ const Hero = () => {
                           Business Hours
                         </p>
                         <div className="space-y-1 text-gray-500 dark:text-gray-400">
-                          <p className="font-semibold text-green-600">
+                          <p className="font-normal text-green-600">
                             Mon-Fri: 9 AM - 7 PM
                           </p>
-                          <p className="font-semibold text-green-600">
+                          <p className="font-normal text-green-600">
                             Saturday: 9 AM - 6 PM
                           </p>
-                          <p className="font-semibold text-red-500 dark:text-red-400">
+                          <p className="font-normal text-red-500 dark:text-red-400">
                             Sunday: Closed
                           </p>
                         </div>
