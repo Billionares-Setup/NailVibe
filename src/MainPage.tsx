@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Review from "./components/Review";
 import Services from "./components/Services";
 import TipsPage from "./components/TipsPage";
+import ClosingNotice from "./components/ClosingNotice";
 
 const MainPage = () => {
   return (
@@ -29,6 +30,7 @@ bg-gradient-to-tr from-purple-400 via-pink-400 to-blue-400
 opacity-40 blur-3xl  overscroll-none "
         ></div> */}
         {/* Pinkish Spots End */}
+        <ClosingNotice/>
         <Hero />
         <Gallery />
         <TipsPage />
