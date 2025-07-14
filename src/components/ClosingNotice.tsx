@@ -10,6 +10,9 @@ const closedDates: { date: string; reason: string }[] = [
   { date: "2025-12-26", reason: "Boxing Day - We'll reopen tomorrow!" },
   { date: "2025-12-31", reason: "New Year's Eve - See you next year! 🎆" },
 
+  //Test day, ask Long if you want to test :)
+//   { date: "2025-07-09", reason: "Test" },
+
   //Changes every year
   { date: "2025-05-19", reason: "Victoria Day - Closed for the holiday 🇨🇦" }, // 📝 Update yearly
   { date: "2025-04-21", reason: "Easter Monday - Closed for the holiday 🐣" },  // 📝 Update yearly
@@ -26,12 +29,12 @@ const ClosingNotice = () => {
 
   useEffect(() => {
   //Dev override: testing and stuff :)
-  //const devOverride = "12-25"; // Christmas
+//   const devOverride = "12-25"; // Christmas
 
   const today = new Date();
 
   //Test
-  //const todayMonthDay = devOverride || `${(today.getMonth() + 1).toString().padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
+//   const todayMonthDay = devOverride || `${(today.getMonth() + 1).toString().padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
   const todayMonthDay = `${(today.getMonth() + 1).toString().padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
   
   //Only for displaying
