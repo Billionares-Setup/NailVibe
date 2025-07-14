@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Review from "./components/Review";
 import TipsPage from "./components/TipsPage";
 import ClosingNotice from "./components/ClosingNotice";
+import RandomTipPopup from "./components/RandomTipPopup";
 
 const MainPage = () => {
   return (
@@ -28,6 +29,7 @@ opacity-40 blur-3xl  overscroll-none "
         ></div> */}
         {/* Pinkish Spots End */}
         <ClosingNotice/>
+        <RandomTipPopup/>
         <Hero />
         <Gallery />
         <TipsPage />

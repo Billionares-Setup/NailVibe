@@ -27,6 +27,7 @@ interface NailTips {
 
 const TipsPage = () => {
   const [activeCategory, setActiveCategory] = useState<TipCategory>("general");
+  const [showPopup, setShowPopup] = useState(false);
 
   const nailTips: NailTips = {
     general: [
@@ -69,7 +70,7 @@ const TipsPage = () => {
     ],
     service: [
       "♿ Wheelchair-friendly pedicure stations available",
-      "🧳 Special violet butterfly chairs for kids' manicures",
+      "🧳 Special pink butterfly chairs for kids' manicures",
       "💼 Expert grooming services for gentlemen",
       "🧼 Hospital-grade sterilization for all tools",
     ],
@@ -194,11 +195,34 @@ const TipsPage = () => {
           personalized nail care recommendations and premium treatments tailored
           to your nail type and lifestyle.
         </p>
-        <button className="px-6 py-2 font-bold transition-all bg-white rounded-full text-violet-600 hover:bg-violet-50">
-          Book an Appointment
+        <button
+          onClick={() => setShowPopup(true)}
+          className="px-6 py-2 font-bold transition-all bg-white rounded-full text-violet-600 hover:bg-violet-50">
+            Book an Appointment
         </button>
+
       </div>
+            {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-6 rounded-lg shadow-xl w-11/12 max-w-md relative animate-fadeInUp">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-2 right-3 text-2xl font-bold text-gray-500 hover:text-red-500"
+            >
+              &times;
+            </button>
+            <h3 className="text-xl font-bold mb-4 text-indigo-600">Book an Appointment</h3>
+            <p className="mb-2">📞 <strong>Call us:</strong> (519) 304-9044</p>
+            <p className="mb-2">📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/RoyalNailsandSpaBrantford/" target="_blank" className="text-blue-600 underline">Royal Nails</a></p>
+            <p className="mb-4">📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/royalnailsbrantford/" target="_blank" className="text-pink-600 underline">@royalnailsbrantford</a></p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              Walk-ins are welcome, but appointments are recommended to ensure availability and avoid wait times.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
+    
   );
 };
 
