@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import ServiceCard from "../components/ServiceCard";
 import { servicePrice } from "../assets/service/service-price";
 import { Icon } from "@iconify/react";
